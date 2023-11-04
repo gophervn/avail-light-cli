@@ -6,5 +6,5 @@ bash <(curl -s https://raw.githubusercontent.com/gophervn/avail-light-cli/main/s
 ```
 2. Check log:
 ```bash
-tail -n 100 -f nohup.out
+tail -n 100 -f ./avail-light/nohup.out
 ```
