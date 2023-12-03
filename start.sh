@@ -58,7 +58,7 @@ if [ ! -f "avail-light-linux-amd64" ]; then
     tar -xf avail-light-linux-amd64.tar.gz
 fi
 echo -e "Check done !"
-echo -e "Running on biryani network..."
+echo -e "Running on goldberg network..."
 # Run the avail-light binary with goldberg network
 nohup ./avail-light-linux-amd64 --network goldberg
 echo -e "Avail light client has been set up successfully !"
