@@ -49,7 +49,7 @@ echo -e "Checking file binary already exists"
 # Check if 'avail-light-linux-amd64.tar.gz' already exists
 if [ ! -f "avail-light-linux-amd64.tar.gz" ]; then
     # Download the avail-light Linux amd64 binary
-    curl -LO https://github.com/availproject/avail-light/releases/download/v1.7.3-rc3/avail-light-linux-amd64.tar.gz
+    curl -LO https://github.com/availproject/avail-light/releases/download/v1.7.4/avail-light-linux-amd64.tar.gz
 fi
 
 # Check if 'avail-light-linux-amd64' already exists
@@ -59,6 +59,6 @@ if [ ! -f "avail-light-linux-amd64" ]; then
 fi
 echo -e "Check done !"
 echo -e "Running on biryani network..."
-# Run the avail-light binary with biryani network
-nohup ./avail-light-linux-amd64 --network biryani
+# Run the avail-light binary with goldberg network
+nohup ./avail-light-linux-amd64 --network goldberg
 echo -e "Avail light client has been set up successfully !"
