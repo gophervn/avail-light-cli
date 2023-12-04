@@ -58,7 +58,26 @@ if [ ! -f "avail-light-linux-amd64" ]; then
     tar -xf avail-light-linux-amd64.tar.gz
 fi
 echo -e "Check done !"
-echo -e "Running on goldberg network..."
-# Run the avail-light binary with goldberg network
-nohup ./avail-light-linux-amd64 --network goldberg
+echo -e "Running on goldberg network..." && sleep 1
+sudo tee /etc/systemd/system/availd.service > /dev/null <<EOF
+[Unit] 
+Description=Avail Light Client
+After=network.target
+StartLimitIntervalSec=0
+[Service] 
+User=root 
+ExecStart=/root/avail-light/avail-light --network goldberg
+Restart=always 
+RestartSec=120
+[Install] 
+WantedBy=multi-user.target
+EOF
+
+# start service
+sudo systemctl daemon-reload
+sudo systemctl enable availd
+sudo systemctl start availd
+
 echo -e "Avail light client has been set up successfully !"
+echo -e 'To check logs:        \e[1m\e[33mjournalctl -f -u availd.service\e[0m'
+echo -e 'Check status service:        \e[1m\e[33msystemctl status availd.service\e[0m'
