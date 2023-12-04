@@ -8,7 +8,7 @@ curl -s https://raw.githubusercontent.com/techxnode/avail-light-cli/main/start.s
 ```bash
 journalctl -f -u availd
 ```
-2. Check status:
+3. Check status:
 ```bash
 systemctl status availd
 ```
