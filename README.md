@@ -2,7 +2,7 @@
 
 1. Run the follwing command:
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/techxnode/avail-light-cli/main/start.sh)
+curl -s https://raw.githubusercontent.com/techxnode/avail-light-cli/main/start.sh | bash
 ```
 2. Check log:
 ```bash
