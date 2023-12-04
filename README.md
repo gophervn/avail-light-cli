@@ -6,5 +6,9 @@ curl -s https://raw.githubusercontent.com/techxnode/avail-light-cli/main/start.s
 ```
 2. Check log:
 ```bash
-tail -n 100 -f ./avail-light/nohup.out
+journalctl -f -u availd
+```
+2. Check service:
+```bash
+systemctl status availd
 ```
